@@ -51,7 +51,7 @@ const SearchModal = ({
     >
       <SafeAreaView>
         <Searchbar
-          placeholder="Search..."
+          placeholder="Ara..."
           onChangeText={(query) => setSearchQuery(query)}
           value={searchQuery}
           style={{
@@ -123,7 +123,7 @@ const SearchItem = ({ price, name, imgSrc, handler }) => (
             fontWeight: "900",
           }}
         >
-          ₹{price}
+          ₺{price}
         </Headline>
       </View>
     </View>

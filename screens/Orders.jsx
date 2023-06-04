@@ -38,7 +38,9 @@ const Orders = () => {
           <ScrollView showsVerticalScrollIndicator={false}>
             {orders.length > 0 ? (
               orders.map((item, index) => (
+               
                 <OrderItem
+                orderItems={item.orderItems}
                   key={item._id}
                   id={item._id}
                   i={index}
@@ -49,8 +51,9 @@ const Orders = () => {
                   address={`${item.shippingInfo.address}, ${item.shippingInfo.city}, ${item.shippingInfo.country} ${item.shippingInfo.pinCode}`}
                 />
               ))
+              
             ) : (
-              <Headline style={{ textAlign: "center" }}>No Orders Yet</Headline>
+              <Headline style={{ textAlign: "center" }}>Henüz Sipariş Yok</Headline>
             )}
           </ScrollView>
         </View>
@@ -58,5 +61,10 @@ const Orders = () => {
     </View>
   );
 };
+
+
+
+
+
 
 export default Orders;

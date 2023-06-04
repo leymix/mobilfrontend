@@ -1,6 +1,34 @@
 import axios from "axios";
 import { server } from "../store";
 
+//new development
+
+export const getAllNoFilterProducts = (page,keyword) => async (dispatch) => {
+  try {
+    dispatch({
+      type: "getAllNoFilterProductsRequest",
+    });
+    const { data } = await axios.get(
+      `${server}/product/allnofilter/${page}?keyword=${keyword}`,
+      {
+        withCredentials: true,
+      }
+    );
+
+    dispatch({
+      type: "getAllNoFilterProductsSuccess",
+      payload: data.products,
+    });
+  } catch (error) {
+    dispatch({
+      type: "getAllNoFilterProductsFail",
+      payload: error.response.data.message,
+    });
+  }
+};
+//new development
+
+
 export const getAllProducts = (keyword, category) => async (dispatch) => {
   try {
     dispatch({

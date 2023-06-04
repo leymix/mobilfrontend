@@ -52,6 +52,9 @@ const AdminOrders = ({ navigation }) => {
             {orders.length > 0 ? (
               orders.map((item, index) => (
                 <OrderItem
+
+
+                  orderItems={item.orderItems}
                   key={item._id}
                   id={item._id}
                   i={index}
@@ -66,7 +69,7 @@ const AdminOrders = ({ navigation }) => {
                 />
               ))
             ) : (
-              <Headline style={{ textAlign: "center" }}>No Orders Yet</Headline>
+              <Headline style={{ textAlign: "center" }}>Henüz Sipariş Yok</Headline>
             )}
           </ScrollView>
         </View>

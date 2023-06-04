@@ -26,7 +26,7 @@ const ProductCard = ({
           justifyContent: "space-between",
           margin: 20,
           borderRadius: 20,
-          height: 390,
+          height: 370,
           backgroundColor: i % 2 === 0 ? colors.color1 : colors.color2,
         }}
       >
@@ -39,7 +39,6 @@ const ProductCard = ({
             height: 200,
             resizeMode: "contain",
             position: "absolute",
-            left: 50,
             top: 105,
           }}
         />

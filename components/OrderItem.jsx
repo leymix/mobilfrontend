@@ -2,8 +2,10 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { colors } from "../styles/styles";
 import { Button } from "react-native-paper";
+import OrderItemTextBox from "./OrderItemTextBox";
 
 const OrderItem = ({
+  orderItems,
   id,
   price,
   address,
@@ -15,6 +17,10 @@ const OrderItem = ({
   loading,
   i = 0,
 }) => {
+  
+  
+ 
+  
   return (
     <View
       style={{
@@ -36,6 +42,29 @@ const OrderItem = ({
       <TextBox title={"Fiyat"} value={"₺"+price} i={i} />
       <TextBox title={"Durum"} value={status==="Delivered"? "Teslim edildi":status==="Shipped"?"Kargoya Verildi":status==="Preparing"?"Hazırlanıyor":"Hata"} i={i} />
       <TextBox title={"Ödeme Yöntemi"} value={paymentMethod==="COD"?"Kapıda Ödeme":paymentMethod} i={i} />
+      
+      <Text
+      style={{
+      marginVertical: 6,
+      color: i % 2 === 0 ? colors.color3 : colors.color2,
+      fontWeight:"900",
+      }}
+      >
+      Ürünler:
+     
+    </Text>
+      
+    
+
+
+  
+      
+      <OrderItemTextBox orderItems={orderItems} i={i} />
+      
+
+         
+      
+    
 
       {admin && (
         <Button
